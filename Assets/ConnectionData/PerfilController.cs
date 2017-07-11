@@ -13,6 +13,9 @@ public class PerfilController : MonoBehaviour
     public InputField UsuNomApe;
     public InputField UsuSex;
     public Dropdown UsuIma;
+    public Image Usuarioavatar;
+    public Sprite hombre;
+    public Sprite mujer;
     public Image UsuarioImagen;
     public Sprite Default;
     public Sprite ImgPer1;
@@ -188,7 +191,16 @@ public class PerfilController : MonoBehaviour
                 break;
         }
 
-       
+        switch (LoginController.userSex) {
+
+            case 0:
+                Usuarioavatar.sprite = hombre;
+                break; 
+            case 1:
+                Usuarioavatar.sprite = mujer;
+                break;
+
+        }
 
         Debug.Log("Datos Cargados");
     //     }

@@ -1759,6 +1759,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 266413506}
+--- !u!1 &277004911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 277004912}
+  - component: {fileID: 277004914}
+  - component: {fileID: 277004913}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &277004912
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277004911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1437927116}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 259, y: 62}
+  m_SizeDelta: {x: 209, y: 259}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &277004913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277004911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &277004914
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277004911}
 --- !u!1 &280261332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,7 +1857,7 @@ RectTransform:
   m_Children:
   - {fileID: 565824342}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2267,6 +2335,9 @@ MonoBehaviour:
   UsuNomApe: {fileID: 1037257365}
   UsuSex: {fileID: 266413508}
   UsuIma: {fileID: 1589080371}
+  Usuarioavatar: {fileID: 277004913}
+  hombre: {fileID: 21300000, guid: 7737cedaa1024d14bb5de9bef351d9b6, type: 3}
+  mujer: {fileID: 21300000, guid: 10af8f081ff22c74599a72d59dcaa3a8, type: 3}
   UsuarioImagen: {fileID: 16164030}
   Default: {fileID: 21300000, guid: 9838fe7004f2df4478f04fe3fa4420a1, type: 3}
   ImgPer1: {fileID: 21300000, guid: eca6b873fc5856047a71b995ba4e1a12, type: 3}
@@ -2288,74 +2359,6 @@ MonoBehaviour:
   confirmar: {fileID: 0}
   VentanaCambiarPass: {fileID: 0}
   confirmarGuardarCambios: {fileID: 0}
---- !u!1 &420174024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 420174025}
-  - component: {fileID: 420174027}
-  - component: {fileID: 420174026}
-  m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &420174025
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 420174024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 4, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1437927116}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260, y: 72.179}
-  m_SizeDelta: {x: 69, y: 71.642}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &420174026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 420174024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8284522787de3574dbc0e601662074f9, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &420174027
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 420174024}
 --- !u!1 &457899260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,7 +2808,7 @@ RectTransform:
   m_Children:
   - {fileID: 490177279}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3417,6 +3420,9 @@ MonoBehaviour:
   UsuNomApe: {fileID: 0}
   UsuSex: {fileID: 0}
   UsuIma: {fileID: 0}
+  Usuarioavatar: {fileID: 0}
+  hombre: {fileID: 0}
+  mujer: {fileID: 0}
   UsuarioImagen: {fileID: 0}
   Default: {fileID: 0}
   ImgPer1: {fileID: 0}
@@ -4114,7 +4120,7 @@ RectTransform:
   - {fileID: 849693601}
   - {fileID: 714779632}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4321,7 +4327,7 @@ RectTransform:
   m_Children:
   - {fileID: 1770419416}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5910,6 +5916,9 @@ MonoBehaviour:
   UsuNomApe: {fileID: 1037257365}
   UsuSex: {fileID: 266413508}
   UsuIma: {fileID: 1589080371}
+  Usuarioavatar: {fileID: 277004913}
+  hombre: {fileID: 21300000, guid: 7737cedaa1024d14bb5de9bef351d9b6, type: 3}
+  mujer: {fileID: 21300000, guid: 10af8f081ff22c74599a72d59dcaa3a8, type: 3}
   UsuarioImagen: {fileID: 16164030}
   Default: {fileID: 21300000, guid: 9838fe7004f2df4478f04fe3fa4420a1, type: 3}
   ImgPer1: {fileID: 21300000, guid: eca6b873fc5856047a71b995ba4e1a12, type: 3}
@@ -6052,7 +6061,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 420174025}
   - {fileID: 1988613679}
   - {fileID: 280261333}
   - {fileID: 520818642}
@@ -6060,6 +6068,7 @@ RectTransform:
   - {fileID: 2004761807}
   - {fileID: 1474013449}
   - {fileID: 1000529385}
+  - {fileID: 277004912}
   m_Father: {fileID: 1992300271}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6247,7 +6256,7 @@ RectTransform:
   m_Children:
   - {fileID: 186978085}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9282,7 +9291,7 @@ RectTransform:
   m_Children:
   - {fileID: 833954383}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9580,7 +9589,7 @@ RectTransform:
   - {fileID: 16164029}
   - {fileID: 402138402}
   m_Father: {fileID: 1437927116}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
