@@ -2,19 +2,14 @@ using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
     // GUI Text to display the gesture messages.
     public GUIText GestureInfo;
-    public int contador1;
-    public int contador2;
-    public int contador3;
-    public int contador4;
-    public int contador5;
-    public int contador6;
-    public int contador7;
-    public int contador8;
+    public int contador;
+
 
     private bool Musibidachi;
     private bool Joe;
@@ -43,6 +38,11 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
     public Image mov7;
     public Image mov8;
 
+    public Image cont0;
+    public Image cont1;
+    public Image cont2;
+    public Image cont3;
+
     public Image subTutor1;
     public Image subTutor2;
     public Image subTutor3;
@@ -65,22 +65,11 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
     private string usuarioTemp = LoginController.usuario;
     public static String modulo = "";
 
-    void Awake()
-    {
-        extraerLockMovimiento(1);
-        extraerLockMovimiento(2);
-        extraerLockMovimiento(3);
-        extraerLockMovimiento(4);
-        extraerLockMovimiento(5);
-        extraerLockMovimiento(6);
-        extraerLockMovimiento(7);
-        extraerLockMovimiento(8);
-    }
 
     void Start()
     {
-        SeleccionMovimineto();
-
+        //SeleccionMovimineto();
+        MovActual = 1;
         if (MovActual == 1)
         {
             mov1.enabled = true;
@@ -169,10 +158,8 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             mov7.enabled = false;
             mov2.enabled = false;
         }
-    
 
-
-
+       
         if (LoginController.mostrarSubs == 1)
         {
             if (MovActual == 1)
@@ -263,8 +250,7 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
                 subTutor7.enabled = false;
                 subTutor2.enabled = false;
             }
-        }
-        else {
+            else {
             subTutor1.enabled = false;
             subTutor2.enabled = false;
             subTutor3.enabled = false;
@@ -273,6 +259,7 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             subTutor6.enabled = false;
             subTutor7.enabled = false;
             subTutor8.enabled = false;
+        }
         }
 
         if (LoginController.reproducirVoz == 1)
@@ -364,7 +351,112 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
                 soundTutor6.Stop();
                 soundTutor7.Stop();
                 soundTutor2.Stop();
+            }else
+            {
+                soundTutor1.Stop();
+                soundTutor2.Stop();
+                soundTutor3.Stop();
+                soundTutor4.Stop();
+                soundTutor5.Stop();
+                soundTutor6.Stop();
+                soundTutor7.Stop();
+                soundTutor8.Stop();
             }
+        }
+    }
+
+    public void Update()
+    {
+        //SeleccionMovimineto();
+        
+        MovActual = 1;
+        if (MovActual == 1)
+        {
+            //soundTutor1.Play();
+            soundTutor2.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 2)
+        {
+            //soundTutor2.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 3)
+        {
+            //soundTutor3.Play();
+            soundTutor1.Stop();
+            soundTutor2.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 4)
+        {
+            //soundTutor4.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor2.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 5)
+        {
+            //soundTutor5.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor2.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 6)
+        {
+            //soundTutor6.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor2.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 7)
+        {
+            //soundTutor7.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor2.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 8)
+        {
+            //soundTutor8.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor2.Stop();
         }
         else
         {
@@ -377,11 +469,8 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             soundTutor7.Stop();
             soundTutor8.Stop();
         }
-    }
+        
 
-    public void Update()
-    {
-        SeleccionMovimineto();
         if (MovActual == 1)
         {
             Enable1();
@@ -473,46 +562,18 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
 
     public void SeleccionMovimineto()
     {
-        if (MovActual == 1)
-        {
-            Musibidachi = true;
-            contador1 = 0;
-        }
-        else if (MovActual == 2)
-        {
-            Joe = true;
-            contador2 = 0;
-        }
-        else if (MovActual == 3)
-        {
-            Zenkutsu = true;
-            contador3 = 0;
-        }
-        else if (MovActual == 4)
-        {
-            Kokutsu = true;
-            contador4 = 0;
-        }
-        else if (MovActual == 5)
-        {
-            Tsuki = true;
-            contador5 = 0;
-        }
-        else if (MovActual == 6)
-        {
-            OiZuki = true;
-            contador6 = 0;
-        }
-        else if (MovActual == 7)
-        {
-            Uke = true;
-            contador7 = 0;
-        }
-        else if (MovActual == 8)
-        {
-            AgeUke = true;
-            contador8 = 0;
-        }
+        
+        extraerLockMovimiento(1);
+        extraerLockMovimiento(2);
+        extraerLockMovimiento(3);
+        extraerLockMovimiento(4);
+        extraerLockMovimiento(5);
+        extraerLockMovimiento(6);
+        extraerLockMovimiento(7);
+        extraerLockMovimiento(8);
+        MovActual = 1;
+
+        
 
     }
 
@@ -539,9 +600,7 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             }
         }
     }
-
-
-
+    
 
     public bool EsMusibidachi()
     {
@@ -676,96 +735,162 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         if (gesture == KinectGestures.Gestures.Musibidachi)
         {
             Musibidachi = true;
-            contador1++;
+            if (MovActual == 1)
+            { contador++; }
+            Debug.Log(contador);
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Joe)
         {
             Joe = true;
-            contador2++;
+            if (MovActual == 2)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.Zenkutsu)
         {
             Zenkutsu = true;
-            contador3++;
+            if (MovActual == 3)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.Kokutsu)
         {
             Kokutsu = true;
-            contador4++;
+            if (MovActual == 4)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.Tsuki)
         {
             Tsuki = true;
-            contador5++;
+            if (MovActual == 5)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.OiZuki)
         {
             OiZuki = true;
-            contador6++;
+            if (MovActual == 6)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.Uke)
         {
             Uke = true;
-            contador7++;
+            if (MovActual == 7)
+            { contador++; }
+            Debug.Log(contador);
+
         }
         else if (gesture == KinectGestures.Gestures.AgeUke)
         {
             AgeUke = true;
-            contador8++;
+            if (MovActual == 1)
+            { contador++; }
+            Debug.Log(contador);
+
         }
+
+
 
         if (MovActual == 1)
         {
-            if (contador1 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
                 ActualizarMovimiento(1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 2)
         {
-            if (contador2 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 3)
         {
-            if (contador3 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(3);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 4)
         {
-            if (contador4 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(4);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 5)
         {
-            if (contador5 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(5);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 6)
         {
-            if (contador6 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(6);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 7)
         {
-            if (contador7 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(7);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (MovActual == 8)
         {
-            if (contador8 == 3)
-                GestureInfo.GetComponent<GUIText>().text = "Siguiente Movimiento";
+            if (contador == 3)
+                
                 ActualizarMovimiento(8);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         return true;
 
     }
+
+    public void ActualizarContador() {
+
+            if (contador == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+   
 
     public void ActualizarMovimiento(int movimiento)
     {

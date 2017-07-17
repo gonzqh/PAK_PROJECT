@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4573,7 +4573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -21.6}
+  m_AnchoredPosition: {x: 0, y: -21.599998}
   m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013793530
@@ -5119,7 +5119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.3, y: 79}
+  m_AnchoredPosition: {x: -9.299999, y: 79}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156581396
@@ -5917,8 +5917,8 @@ MonoBehaviour:
   UsuSex: {fileID: 266413508}
   UsuIma: {fileID: 1589080371}
   Usuarioavatar: {fileID: 277004913}
-  hombre: {fileID: 21300000, guid: 7737cedaa1024d14bb5de9bef351d9b6, type: 3}
-  mujer: {fileID: 21300000, guid: 10af8f081ff22c74599a72d59dcaa3a8, type: 3}
+  hombre: {fileID: 21300000, guid: ddf5dc10ec4476e4183636917168b046, type: 3}
+  mujer: {fileID: 21300000, guid: ddf5dc10ec4476e4183636917168b046, type: 3}
   UsuarioImagen: {fileID: 16164030}
   Default: {fileID: 21300000, guid: 9838fe7004f2df4478f04fe3fa4420a1, type: 3}
   ImgPer1: {fileID: 21300000, guid: eca6b873fc5856047a71b995ba4e1a12, type: 3}
@@ -7169,7 +7169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2, y: 105}
+  m_AnchoredPosition: {x: 2.1999998, y: 105}
   m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615767022
@@ -10110,7 +10110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.4, y: -117.7}
+  m_AnchoredPosition: {x: -1.4000001, y: -117.7}
   m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111028877
