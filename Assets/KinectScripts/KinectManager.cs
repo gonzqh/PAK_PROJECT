@@ -8,10 +8,13 @@ using System.IO;
 using System.Text;
 
 
+
+
+
 public class KinectManager : MonoBehaviour
 {
-    
-	public enum Smoothing : int { None, Default, Medium, Aggressive }
+
+    public enum Smoothing : int { None, Default, Medium, Aggressive }
 	
 	
 	// Public Bool to determine how many players there are. Default of one user.
@@ -997,7 +1000,7 @@ public class KinectManager : MonoBehaviour
 			flipMatrix[2, 2] = -1;
 			
 			instance = this;
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 		}
 		catch(DllNotFoundException e)
 		{
@@ -1013,6 +1016,8 @@ public class KinectManager : MonoBehaviour
 		{
 			string message = e.Message + " - " + KinectWrapper.GetNuiErrorString(hr);
 			Debug.LogError(message);
+            //Agregar aqui codigo reiniciar aqui
+            LoginController.KinectErrorDetected = 1;
 			Debug.LogError(e.ToString());
 			if(CalibrationText != null)
 				CalibrationText.GetComponent<GUIText>().text = message;
@@ -1091,7 +1096,7 @@ public class KinectManager : MonoBehaviour
 		// GUI Text.
 		if(CalibrationText != null)
 		{
-			CalibrationText.GetComponent<GUIText>().text = "WAITING FOR USERS";
+			CalibrationText.GetComponent<GUIText>().text = "Esperando al Usuario";
 		}
 		
 		Debug.Log("Waiting for users.");

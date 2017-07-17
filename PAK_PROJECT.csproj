@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -100,6 +102,8 @@
     <Compile Include="Assets\Game Jam Menu Template\Scripts\Ayuda.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\Configuraciones.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\ErrorLogin.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\reiniciarKinectCuadro.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\Entrenamiento.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\Intro.cs" />
@@ -153,6 +157,7 @@
     <Compile Include="Assets\Scripts\PosCueController.cs" />
     <Compile Include="Assets\Scripts\PosDefController.cs" />
     <Compile Include="Assets\Scripts\PosNatController.cs" />
+    <Compile Include="Assets\Scripts\regresarMenu.cs" />
     <Compile Include="Assets\Scripts\TsukiListener.cs" />
     <Compile Include="Assets\Scripts\pantallaKinect.cs" />
     <Compile Include="Assets\Scripts\regresarModulo.cs" />

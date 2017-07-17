@@ -16,14 +16,25 @@ public class LoginController : MonoBehaviour
     public GameObject logsuccess;
     public static string usuario = "";
     public static float volumenSelected = 1f;
+    public GameObject CuadroReiniciar;
 
 
-//    public static int musicSelected = 0;
-  //  public static int dojoSelected = 0;
-  //  public static int reproducirVoz = 0;
-   // public static int mostrarSubs = 0;
-   // public static int mostrarmePantalla = 0;
-   // public static int mostrarTips = 0;
+    public void errorlogin()
+    {
+        Debug.Log("?");
+        if (LoginController.ErrorLog == 3)
+            CuadroReiniciar.SetActive(true);
+        else
+            CuadroReiniciar.SetActive(false);
+
+    }
+
+    //    public static int musicSelected = 0;
+    //  public static int dojoSelected = 0;
+    //  public static int reproducirVoz = 0;
+    // public static int mostrarSubs = 0;
+    // public static int mostrarmePantalla = 0;
+    // public static int mostrarTips = 0;
 
 
     public static int musicSelected ;
@@ -34,7 +45,8 @@ public class LoginController : MonoBehaviour
     public static int mostrarTips ;
     public static int userSex;
     public static int Movimiento=0;
-
+    public static int KinectErrorDetected = 0;
+    public static int ErrorLog = 0;
 
 
     void Start()
@@ -63,7 +75,8 @@ public class LoginController : MonoBehaviour
         else
         {
             logerror.SetActive(true);
-            
+
+
         }
     }
 
@@ -76,6 +89,8 @@ public class LoginController : MonoBehaviour
         yield return (conecction);
         if (conecction.text.Contains("null"))
         {
+            ErrorLog++;
+            errorlogin();
             logsuccess.SetActive(false);
             logerror.SetActive(true);
         }
@@ -88,8 +103,8 @@ public class LoginController : MonoBehaviour
                 logsuccess.SetActive(true);
                 string[] configuracion = conecction.text.Split('#');
 
-                musicSelected = Int32.Parse(configuracion[0]) - 1;
-                dojoSelected = Int32.Parse(configuracion[1]) - 1;
+                musicSelected = Int32.Parse(configuracion[0]);
+                dojoSelected = Int32.Parse(configuracion[1]);
                 reproducirVoz = Int32.Parse(configuracion[2]);
                 mostrarSubs = Int32.Parse(configuracion[3]);
                 mostrarmePantalla = Int32.Parse(configuracion[4]);
@@ -102,6 +117,7 @@ public class LoginController : MonoBehaviour
             }
             catch (Exception) {
                 logerror.SetActive(true);
+
                 logsuccess.SetActive(false);
             }
            

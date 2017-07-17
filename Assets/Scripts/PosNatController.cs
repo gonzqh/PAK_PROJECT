@@ -52,7 +52,7 @@ public class PosNatController : MonoBehaviour {
     {
         if (!lockJoe.enabled)
         {
-            LoginController.Movimiento = 1;
+            LoginController.Movimiento = 2;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
         
@@ -61,7 +61,7 @@ public class PosNatController : MonoBehaviour {
     {
         if (!lockKamae.enabled)
         {
-            LoginController.Movimiento = 2;
+            LoginController.Movimiento = 1;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
         

@@ -9,6 +9,7 @@ public class regresarModulo : MonoBehaviour {
 
     public void regresarModuloAnterior() {
         string modulo = ModulosController.modulo;
-        SceneManager.LoadScene(modulo);
+        DestroyImmediate(Camera.main.gameObject);
+        SceneManager.LoadScene("ModulosEntrenamiento");
     }
 }

@@ -24,6 +24,9 @@ public class KamaeController : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
+        Debug.Log("ambiente" + LoginController.dojoSelected);
+        Debug.Log("musica" + LoginController.musicSelected);
+
         switch (LoginController.dojoSelected)
         {
             case 1:

@@ -396,42 +396,42 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         if (MovActual == 1)
         {
             Musibidachi = true;
-            contador1 = 0;
+            
         }
         else if (MovActual == 2)
         {
             Joe = true;
-            contador2 = 0;
+            
         }
         else if (MovActual == 3)
         {
             Zenkutsu = true;
-            contador3 = 0;
+            
         }
         else if (MovActual == 4)
         {
             Kokutsu = true;
-            contador4 = 0;
+            
         }
         else if (MovActual == 5)
         {
             Tsuki = true;
-            contador5 = 0;
+            
         }
         else if (MovActual == 6)
         {
             OiZuki = true;
-            contador6 = 0;
+            
         }
         else if (MovActual == 7)
         {
             Uke = true;
-            contador7 = 0;
+            
         }
         else if (MovActual == 8)
         {
             AgeUke = true;
-            contador8 = 0;
+            
         }
 
     }
@@ -605,36 +605,43 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         {
             Joe = true;
             contador2++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Zenkutsu)
         {
             Zenkutsu = true;
             contador3++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Kokutsu)
         {
             Kokutsu = true;
             contador4++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Tsuki)
         {
             Tsuki = true;
             contador5++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.OiZuki)
         {
             OiZuki = true;
             contador6++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Uke)
         {
             Uke = true;
             contador7++;
+            ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.AgeUke)
         {
             AgeUke = true;
             contador8++;
+            ActualizarContador();
         }
 
         if (MovActual == 1 && contador1 == 3)
@@ -642,7 +649,17 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             Debug.Log("Musi Completo");
             LoginController.Movimiento = 2;
             ActualizarMovimiento(1);
-            DestroyImmediate(Camera.main.gameObject);
+            //DestroyImmediate(Camera.main.gameObject);
+            (transform.GetComponent<KinectManager>() as MonoBehaviour).enabled = false;
+            (transform.GetComponent<GestureListener>() as MonoBehaviour).enabled = false;
+            soundTutor1.Stop();
+            soundTutor2.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
  
         }
