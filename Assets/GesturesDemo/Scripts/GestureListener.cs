@@ -68,8 +68,8 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
 
     void Start()
     {
-        //SeleccionMovimineto();
-        MovActual = 1;
+        SeleccionMovimineto();
+
         if (MovActual == 1)
         {
             mov1.enabled = true;
@@ -367,9 +367,9 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
 
     public void Update()
     {
-        //SeleccionMovimineto();
+       SeleccionMovimineto();
         
-        MovActual = 1;
+        
         if (MovActual == 1)
         {
             //soundTutor1.Play();
@@ -571,9 +571,7 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         extraerLockMovimiento(6);
         extraerLockMovimiento(7);
         extraerLockMovimiento(8);
-        MovActual = 1;
-
-        
+       
 
     }
 
