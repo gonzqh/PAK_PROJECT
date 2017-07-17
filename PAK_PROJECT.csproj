@@ -121,7 +121,6 @@
     <Compile Include="Assets\Game Jam Menu Template\Scripts\eliminarCuentaCuadro.cs" />
     <Compile Include="Assets\Game Jam Menu Template\Scripts\iraMenuPrincipal.cs" />
     <Compile Include="Assets\GesturesDemo\Scripts\GestureListener.cs" />
-    <Compile Include="Assets\GesturesDemo\Scripts\MusibidachiListener.cs" />
     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
     <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />

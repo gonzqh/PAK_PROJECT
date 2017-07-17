@@ -33,6 +33,7 @@ public class LoginController : MonoBehaviour
     public static int mostrarmePantalla ;
     public static int mostrarTips ;
     public static int userSex;
+    public static int Movimiento=0;
 
 
 

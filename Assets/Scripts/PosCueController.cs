@@ -8,7 +8,7 @@ public class PosCueController : MonoBehaviour {
 
     public Image lockZen;
     public Image lockKok;
-
+    public int Movimiento;
 
     void Start()
     {
@@ -51,6 +51,7 @@ public class PosCueController : MonoBehaviour {
     {
         if (!lockKok.enabled)
         {
+            LoginController.Movimiento = 4;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
        
@@ -59,6 +60,7 @@ public class PosCueController : MonoBehaviour {
     {
         if (!lockZen.enabled)
         {
+            LoginController.Movimiento = 3;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
         

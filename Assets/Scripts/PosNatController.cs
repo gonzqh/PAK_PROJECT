@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PosNatController : MonoBehaviour {
     public Image lockKamae;
     public Image lockJoe;
+    public int Movimiento;
 
 
     void Start()
@@ -49,7 +50,9 @@ public class PosNatController : MonoBehaviour {
     }
     public void abrirJoe()
     {
-        if (!lockJoe.enabled) {
+        if (!lockJoe.enabled)
+        {
+            LoginController.Movimiento = 1;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
         
@@ -58,6 +61,7 @@ public class PosNatController : MonoBehaviour {
     {
         if (!lockKamae.enabled)
         {
+            LoginController.Movimiento = 2;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
         

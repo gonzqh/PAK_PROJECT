@@ -7,7 +7,7 @@ public class PosAtaController : MonoBehaviour {
     
     public Image lockTsu;
     public Image lockOi;
-
+    public int Movimiento;
 
     void Start()
     {
@@ -50,6 +50,7 @@ public class PosAtaController : MonoBehaviour {
     {
         if (!lockTsu.enabled)
         {
+            LoginController.Movimiento = 5;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
 
@@ -59,6 +60,7 @@ public class PosAtaController : MonoBehaviour {
     {
         if (!lockOi.enabled)
         {
+            LoginController.Movimiento = 6;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
 

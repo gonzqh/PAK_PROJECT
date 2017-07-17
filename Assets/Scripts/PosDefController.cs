@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PosDefController : MonoBehaviour {
     public Image lockUke;
     public Image lockAge;
-
+    public int Movimiento;
     void Start()
     {
         extraerLockMovimiento(7, lockUke);
@@ -46,6 +46,7 @@ public class PosDefController : MonoBehaviour {
     {
         if (!lockUke.enabled)
         {
+            LoginController.Movimiento = 7;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
 
@@ -55,6 +56,7 @@ public class PosDefController : MonoBehaviour {
     {
         if (!lockAge.enabled)
         {
+            LoginController.Movimiento = 8;
             SceneManager.LoadScene("KinectGesturesDemo");
         }
 

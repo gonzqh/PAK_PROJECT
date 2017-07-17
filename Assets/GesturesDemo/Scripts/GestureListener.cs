@@ -8,8 +8,14 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
 {
     // GUI Text to display the gesture messages.
     public GUIText GestureInfo;
-    public int contador;
-
+    public int contador1;
+    public int contador2;
+    public int contador3;
+    public int contador4;
+    public int contador5;
+    public int contador6;
+    public int contador7;
+    public int contador8;
 
     private bool Musibidachi;
     private bool Joe;
@@ -61,105 +67,123 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
     public AudioSource soundTutor7;
     public AudioSource soundTutor8;
 
-    public int MovActual = 0;
+    public int MovActual;
     private string usuarioTemp = LoginController.usuario;
     public static String modulo = "";
+
+    private void Awake()
+    {
+            contador1 =0;
+            contador2=0;
+            contador3=0;
+            contador4=0;
+            contador5=0;
+            contador6=0;
+            contador7=0;
+            contador8=0;
+        SeleccionMovimiento();
+        ActualizarContador();
+    }
 
 
     void Start()
     {
-        SeleccionMovimineto();
+        SeleccionMovimiento();
+        Debug.Log("Mov Actual es :");
+        Debug.Log(MovActual);
+        if (MovActual != 0)
+        {
+            if (MovActual == 1)
+            {
+                mov1.enabled = true;
+                mov2.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 2)
+            {
+                mov2.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 3)
+            {
+                mov3.enabled = true;
+                mov1.enabled = false;
+                mov2.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 4)
+            {
+                mov4.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov2.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 5)
+            {
+                mov5.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov2.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 6)
+            {
+                mov6.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov2.enabled = false;
+                mov7.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 7)
+            {
+                mov7.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov2.enabled = false;
+                mov8.enabled = false;
+            }
+            else if (MovActual == 8)
+            {
+                mov8.enabled = true;
+                mov1.enabled = false;
+                mov3.enabled = false;
+                mov4.enabled = false;
+                mov5.enabled = false;
+                mov6.enabled = false;
+                mov7.enabled = false;
+                mov2.enabled = false;
+            }
 
-        if (MovActual == 1)
-        {
-            mov1.enabled = true;
-            mov2.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 2)
-        {
-            mov2.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 3)
-        {
-            mov3.enabled = true;
-            mov1.enabled = false;
-            mov2.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 4)
-        {
-            mov4.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov2.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 5)
-        {
-            mov5.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov2.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 6)
-        {
-            mov6.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov2.enabled = false;
-            mov7.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 7)
-        {
-            mov7.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov2.enabled = false;
-            mov8.enabled = false;
-        }
-        else if (MovActual == 8)
-        {
-            mov8.enabled = true;
-            mov1.enabled = false;
-            mov3.enabled = false;
-            mov4.enabled = false;
-            mov5.enabled = false;
-            mov6.enabled = false;
-            mov7.enabled = false;
-            mov2.enabled = false;
         }
 
-       
         if (LoginController.mostrarSubs == 1)
         {
             if (MovActual == 1)
@@ -249,17 +273,17 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
                 subTutor6.enabled = false;
                 subTutor7.enabled = false;
                 subTutor2.enabled = false;
+            }else
+            {
+                subTutor1.enabled = false;
+                subTutor2.enabled = false;
+                subTutor3.enabled = false;
+                subTutor4.enabled = false;
+                subTutor5.enabled = false;
+                subTutor6.enabled = false;
+                subTutor7.enabled = false;
+                subTutor8.enabled = false;
             }
-            else {
-            subTutor1.enabled = false;
-            subTutor2.enabled = false;
-            subTutor3.enabled = false;
-            subTutor4.enabled = false;
-            subTutor5.enabled = false;
-            subTutor6.enabled = false;
-            subTutor7.enabled = false;
-            subTutor8.enabled = false;
-        }
         }
 
         if (LoginController.reproducirVoz == 1)
@@ -365,213 +389,50 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         }
     }
 
-    public void Update()
+    public void SeleccionMovimiento()
     {
-       SeleccionMovimineto();
-        
-        
+        MovActual = LoginController.Movimiento;
+
         if (MovActual == 1)
         {
-            //soundTutor1.Play();
-            soundTutor2.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            Musibidachi = true;
+            contador1 = 0;
         }
         else if (MovActual == 2)
         {
-            //soundTutor2.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            Joe = true;
+            contador2 = 0;
         }
         else if (MovActual == 3)
         {
-            //soundTutor3.Play();
-            soundTutor1.Stop();
-            soundTutor2.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            Zenkutsu = true;
+            contador3 = 0;
         }
         else if (MovActual == 4)
         {
-            //soundTutor4.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor2.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            Kokutsu = true;
+            contador4 = 0;
         }
         else if (MovActual == 5)
         {
-            //soundTutor5.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor2.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            Tsuki = true;
+            contador5 = 0;
         }
         else if (MovActual == 6)
         {
-            //soundTutor6.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor2.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
+            OiZuki = true;
+            contador6 = 0;
         }
         else if (MovActual == 7)
         {
-            //soundTutor7.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor2.Stop();
-            soundTutor8.Stop();
+            Uke = true;
+            contador7 = 0;
         }
         else if (MovActual == 8)
         {
-            //soundTutor8.Play();
-            soundTutor1.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor2.Stop();
+            AgeUke = true;
+            contador8 = 0;
         }
-        else
-        {
-            soundTutor1.Stop();
-            soundTutor2.Stop();
-            soundTutor3.Stop();
-            soundTutor4.Stop();
-            soundTutor5.Stop();
-            soundTutor6.Stop();
-            soundTutor7.Stop();
-            soundTutor8.Stop();
-        }
-        
-
-        if (MovActual == 1)
-        {
-            Enable1();
-            Disable2();
-            Disable3();
-            Disable4();
-            Disable5();
-            Disable6();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 2) {
-            Enable2();
-            Disable1();
-            Disable3();
-            Disable4();
-            Disable5();
-            Disable6();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 3)
-        {
-            Enable3();
-            Disable1();
-            Disable2();
-            Disable4();
-            Disable5();
-            Disable6();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 4)
-        {
-            Enable4();
-            Disable1();
-            Disable2();
-            Disable3();
-            Disable5();
-            Disable6();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 5)
-        {
-            Enable5();
-            Disable1();
-            Disable2();
-            Disable3();
-            Disable4();
-            Disable6();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 6)
-        {
-            Enable6();
-            Disable1();
-            Disable2();
-            Disable3();
-            Disable4();
-            Disable5();
-            Disable7();
-            Disable8();
-        }
-        else if (MovActual == 7)
-        {
-            Enable7();
-            Disable1();
-            Disable2();
-            Disable3();
-            Disable4();
-            Disable5();
-            Disable6();
-            Disable8();
-        }
-        else if (MovActual == 8)
-        {
-            Enable8();
-            Disable1();
-            Disable2();
-            Disable3();
-            Disable4();
-            Disable5();
-            Disable6();
-            Disable7();
-        }
-    }
-
-    public void SeleccionMovimineto()
-    {
-        
-        extraerLockMovimiento(1);
-        extraerLockMovimiento(2);
-        extraerLockMovimiento(3);
-        extraerLockMovimiento(4);
-        extraerLockMovimiento(5);
-        extraerLockMovimiento(6);
-        extraerLockMovimiento(7);
-        extraerLockMovimiento(8);
-       
 
     }
 
@@ -595,10 +456,13 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
             if (conecction.text.Contains("1"))
             {
                 MovActual += 1;
+                Debug.Log(MovActual);
             }
         }
     }
-    
+
+
+
 
     public bool EsMusibidachi()
     {
@@ -733,162 +597,107 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         if (gesture == KinectGestures.Gestures.Musibidachi)
         {
             Musibidachi = true;
-            if (MovActual == 1)
-            { contador++; }
-            Debug.Log(contador);
+            contador1++;
+            Debug.Log(contador1);
             ActualizarContador();
         }
         else if (gesture == KinectGestures.Gestures.Joe)
         {
             Joe = true;
-            if (MovActual == 2)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador2++;
         }
         else if (gesture == KinectGestures.Gestures.Zenkutsu)
         {
             Zenkutsu = true;
-            if (MovActual == 3)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador3++;
         }
         else if (gesture == KinectGestures.Gestures.Kokutsu)
         {
             Kokutsu = true;
-            if (MovActual == 4)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador4++;
         }
         else if (gesture == KinectGestures.Gestures.Tsuki)
         {
             Tsuki = true;
-            if (MovActual == 5)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador5++;
         }
         else if (gesture == KinectGestures.Gestures.OiZuki)
         {
             OiZuki = true;
-            if (MovActual == 6)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador6++;
         }
         else if (gesture == KinectGestures.Gestures.Uke)
         {
             Uke = true;
-            if (MovActual == 7)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador7++;
         }
         else if (gesture == KinectGestures.Gestures.AgeUke)
         {
             AgeUke = true;
-            if (MovActual == 1)
-            { contador++; }
-            Debug.Log(contador);
-
+            contador8++;
         }
 
-
-
-        if (MovActual == 1)
+        if (MovActual == 1 && contador1 == 3)
         {
-            if (contador == 3)
-                ActualizarMovimiento(1);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Debug.Log("Musi Completo");
+            LoginController.Movimiento = 2;
+            ActualizarMovimiento(1);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+ 
         }
-        else if (MovActual == 2)
+        else if (MovActual == 2 && contador2 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(2);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 3;
+            ActualizarMovimiento(2);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 3)
+        else if (MovActual == 3 && contador3 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(3);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 4;
+            ActualizarMovimiento(3);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 4)
+        else if (MovActual == 4 && contador4 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(4);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 5;
+            ActualizarMovimiento(4);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 5)
+        else if (MovActual == 5 && contador5 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(5);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 6;
+            ActualizarMovimiento(5);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 6)
+        else if (MovActual == 6 && contador6 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(6);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 7;
+            ActualizarMovimiento(6);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 7)
+        else if (MovActual == 7 && contador7 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(7);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoginController.Movimiento = 8;
+            ActualizarMovimiento(7);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (MovActual == 8)
+        else if (MovActual == 8 && contador8 == 3)
         {
-            if (contador == 3)
-                
-                ActualizarMovimiento(8);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            ActualizarMovimiento(8);
+            DestroyImmediate(Camera.main.gameObject);
+            SceneManager.LoadScene("ModulosEntrenamiento");
         }
 
         return true;
 
     }
-
-    public void ActualizarContador() {
-
-            if (contador == 0)
-            {
-                cont0.enabled = true;
-                cont1.enabled = false;
-                cont2.enabled = false;
-                cont3.enabled = false;
-            }
-            else if (contador == 1)
-            {
-                cont0.enabled = false;
-                cont1.enabled = true;
-                cont2.enabled = false;
-                cont3.enabled = false;
-            }
-            else if (contador == 2)
-            {
-                cont0.enabled = false;
-                cont1.enabled = false;
-                cont2.enabled = true;
-                cont3.enabled = false;
-            }
-            else if (contador == 3)
-            {
-                cont0.enabled = false;
-                cont1.enabled = false;
-                cont2.enabled = false;
-                cont3.enabled = true;
-            }
-        }
-   
 
     public void ActualizarMovimiento(int movimiento)
     {
@@ -907,18 +716,468 @@ public class GestureListener : MonoBehaviour, KinectGestures.GestureListenerInte
         }
         else
         {
-           
+
         }
     }
-
-
-
+    
     public bool GestureCancelled(uint userId, int userIndex, KinectGestures.Gestures gesture,
                                   KinectWrapper.NuiSkeletonPositionIndex joint)
     {
         // don't do anything here, just reset the gesture state
         return true;
     }
+
+
+    public void ActualizarContador()
+    {
+
+        if (MovActual == 1)
+        {
+            if (contador1 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador1 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador1 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador1 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 2)
+        {
+            if (contador2 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador2 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador2 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador2 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 3)
+        {
+            if (contador3 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador3 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador3 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador3 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 4)
+        {
+            if (contador4 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador4 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador4 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador4 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 5)
+        {
+            if (contador5 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador5 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador5 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador5 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 6)
+        {
+            if (contador6 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador6 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador6 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador6 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 7)
+        {
+            if (contador7 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador7 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador7 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador7 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+        if (MovActual == 8)
+        {
+            if (contador8 == 0)
+            {
+                cont0.enabled = true;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador8 == 1)
+            {
+                cont0.enabled = false;
+                cont1.enabled = true;
+                cont2.enabled = false;
+                cont3.enabled = false;
+            }
+            else if (contador8 == 2)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = true;
+                cont3.enabled = false;
+            }
+            else if (contador8 == 3)
+            {
+                cont0.enabled = false;
+                cont1.enabled = false;
+                cont2.enabled = false;
+                cont3.enabled = true;
+            }
+        }
+    }
+
+
+
+
+    public void Update()
+    {
+        SeleccionMovimiento();
+        if (MovActual == 1)
+        {
+            Enable1();
+            Disable2();
+            Disable3();
+            Disable4();
+            Disable5();
+            Disable6();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 2)
+        {
+            Enable2();
+            Disable1();
+            Disable3();
+            Disable4();
+            Disable5();
+            Disable6();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 3)
+        {
+            Enable3();
+            Disable1();
+            Disable2();
+            Disable4();
+            Disable5();
+            Disable6();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 4)
+        {
+            Enable4();
+            Disable1();
+            Disable2();
+            Disable3();
+            Disable5();
+            Disable6();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 5)
+        {
+            Enable5();
+            Disable1();
+            Disable2();
+            Disable3();
+            Disable4();
+            Disable6();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 6)
+        {
+            Enable6();
+            Disable1();
+            Disable2();
+            Disable3();
+            Disable4();
+            Disable5();
+            Disable7();
+            Disable8();
+        }
+        else if (MovActual == 7)
+        {
+            Enable7();
+            Disable1();
+            Disable2();
+            Disable3();
+            Disable4();
+            Disable5();
+            Disable6();
+            Disable8();
+        }
+        else if (MovActual == 8)
+        {
+            Enable8();
+            Disable1();
+            Disable2();
+            Disable3();
+            Disable4();
+            Disable5();
+            Disable6();
+            Disable7();
+        }
+
+        if (MovActual == 1)
+        {
+            //soundTutor1.Play();
+            soundTutor2.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 2)
+        {
+            //soundTutor2.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 3)
+        {
+            //soundTutor3.Play();
+            soundTutor1.Stop();
+            soundTutor2.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 4)
+        {
+           // soundTutor4.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor2.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 5)
+        {
+         //   soundTutor5.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor2.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 6)
+        {
+       //     soundTutor6.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor2.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 7)
+        {
+           // soundTutor7.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor2.Stop();
+            soundTutor8.Stop();
+        }
+        else if (MovActual == 8)
+        {
+         //   soundTutor8.Play();
+            soundTutor1.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor2.Stop();
+        }
+        else
+        {
+            soundTutor1.Stop();
+            soundTutor2.Stop();
+            soundTutor3.Stop();
+            soundTutor4.Stop();
+            soundTutor5.Stop();
+            soundTutor6.Stop();
+            soundTutor7.Stop();
+            soundTutor8.Stop();
+        }
+    }
+
+
 
     public void Enable1()
     {
